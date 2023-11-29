@@ -7,6 +7,11 @@
  * @source https://github.com/unknown81311/BetterMediaPlayer
  * @updateUrl https://raw.githubusercontent.com/unknown81311/BetterMediaPlayer/main/BetterMediaPlayer.plugin.js
  * @invite yYJA3qQE5F
+
+
+ Hesham Hesham:
+ -Edited the loop button to make it ON by default
+ -The only modifications are in appendLoopButton
  */
 
 const { Webpack, DOM, React, Data, UI } = new BdApi("BetterMediaPlayer");
@@ -75,9 +80,14 @@ const appendLoopButton = (videoButtons) => {
     if (video.loop = !video.loop) node.classList.add("BMP_active");
     else node.classList.remove("BMP_active");
   });
-  
+
+
+  // if (video.loop) node.classList.add("BMP_active");
+
+
   node.classList.add("BMP_button");
-  if (video.loop) node.classList.add("BMP_active");
+  node.classList.add("BMP_active");
+  video.loop = true;
 
   node.innerHTML = `<svg class="${classes.controlIcon}" aria-hidden="true" role="img" width="24" height="24" viewBox="-5 0 459 459.648" xmlns="http://www.w3.org/2000/svg">
   <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="m416.324219 293.824219c0 26.507812-21.492188 48-48 48h-313.375l63.199219-63.199219-22.625-22.625-90.511719 90.511719c-6.246094 6.25-6.246094 16.375 0 22.625l90.511719 90.511719 22.625-22.625-63.199219-63.199219h313.375c44.160156-.054688 79.945312-35.839844 80-80v-64h-32zm0 0" aria-hidden="true"></path>
